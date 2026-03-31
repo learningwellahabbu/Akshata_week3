@@ -1,5 +1,5 @@
-// Calculator module with basic arithmetic operations
-// Supports: addition, subtraction, multiplication, division
+// Calculator module with arithmetic operations
+// Supports: addition, subtraction, multiplication, division, modulo, power, square root
 
 function add(a, b) {
   return a + b;
@@ -20,9 +20,30 @@ function divide(a, b) {
   return a / b;
 }
 
+function modulo(a, b) {
+  if (b === 0) {
+    throw new Error("Modulo by zero is not allowed");
+  }
+  return a % b;
+}
+
+function power(base, exponent) {
+  return Math.pow(base, exponent);
+}
+
+function squareRoot(n) {
+  if (n < 0) {
+    throw new Error("Square root of negative numbers is not allowed");
+  }
+  return Math.sqrt(n);
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
-  divide
+  divide,
+  modulo,
+  power,
+  squareRoot
 };
